@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Momentum App</title>
+    <link rel="stylesheet" href="style.css" id="css" />
+    <script src="./js/greeting.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <div class="today">
+          <div class="weather">
+            <div class="weather__temparatuer">
+              <span>3도씨</span>
+            </div>
+            <div class="weather__city">
+              <span>인천</span>
+            </div>
+          </div>
+          <div class="time">
+            <div class="time__now">
+              <span>00:00</span>
+            </div>
+          </div>
+        </div>
+        <div class="music">
+          <div class="music__title">
+            <span>musictitle</span>
+          </div>
+          <div class="music__bar">
+            <span>______________</span>
+          </div>
+          <div class="music__control"></div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="main-container">
+        <div class="work">
+          <span class="work__greeting">안녕하세요 이동복님</span>
+          <form action="#" class="work-frm">
+            <input class="work__what">무엇을 할까요?</input>
+          </form>
+          <div class="work-show">
+            <input type="checkbox" name="workCheck" id="workCheck">
+            <span class="work-doing">밥먹기</span>
+            <i>
+              <div class="work-item">
+                <div class="work-item__edit"><i></i></div>
+                <div class="work-item__delete"><i></i></div>
+              </div>
+            </i>
+          </div>
+        </div>
+        <div class="timer">
+          <div class="timer__container">
+            <span class="timer__bigTime timer__bigTime--stop">00:00</span>
+            <span class="timer__smallTime">50</span>
+          </div>
+          <div class="timer__btns">
+            <button class="timer__reset-btn">재설정</button>
+            <button class="timer__start-btn">시작</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="social">
+        <a href="#">github</a>
+        <a href="#">github</a>
+        <a href="#">github</a>
+      </div>
+      <div class="queto">
+        <span class="queto__text"></span>
+        <span class="queto__author"></span>
+      </div>
+      <div class="todo">
+        <span>Todo</span>
+        <div class="todo-container">
+          <div class="todo-top">
+            <div class="todo-top__title active" data-type="today">Today</div>
+            <div class="todo-top__title" data-type="done">Done</div>
+            <i></i>
+          </div>
+          <div class="todo-body">
+            <div class="todo__new">New Todo</div>
+            <form action="#" class="todo-frm">
+              <input type="text" class="todo__content" placeholder="New Todo">
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
