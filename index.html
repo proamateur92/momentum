@@ -5,94 +5,112 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Momentum App</title>
-    <link rel="stylesheet" href="style.css" id="css" />
+    <link rel="stylesheet" href="./css/style.css" id="css" />
+    <script src="https://kit.fontawesome.com/c1651245ed.js" crossorigin="anonymous"></script>
     <script src="./js/greeting.js" defer></script>
   </head>
   <body>
-    <header class="header">
-      <div class="header__container">
-        <div class="today">
-          <div class="weather">
-            <div class="weather__temparatuer">
-              <span>3도씨</span>
-            </div>
-            <div class="weather__city">
-              <span>인천</span>
-            </div>
-          </div>
-          <div class="time">
-            <div class="time__now">
-              <span>00:00</span>
-            </div>
-          </div>
-        </div>
-        <div class="music">
-          <div class="music__title">
-            <span>musictitle</span>
-          </div>
-          <div class="music__bar">
-            <span>______________</span>
-          </div>
-          <div class="music__control"></div>
-        </div>
-      </div>
-    </header>
-    <main class="main">
-      <section class="main-container">
-        <div class="work">
-          <span class="work__greeting">안녕하세요 이동복님</span>
-          <form action="#" class="work-frm">
-            <input class="work__what">무엇을 할까요?</input>
-          </form>
-          <div class="work-show">
-            <input type="checkbox" name="workCheck" id="workCheck">
-            <span class="work-doing">밥먹기</span>
-            <i>
-              <div class="work-item">
-                <div class="work-item__edit"><i></i></div>
-                <div class="work-item__delete"><i></i></div>
+    <div class="cover">
+      <header class="header">
+        <div class="header__container">
+          <div class="today">
+            <div class="weather">
+              <div class="info">
+                <span>인천</span>
+                <span>3도씨</span>
               </div>
-            </i>
+            </div>
+            <div class="time">
+              <div class="time__now">
+                <span>00:00</span>
+              </div>
+            </div>
+          </div>
+          <div class="music">
+            <div class="music__title">
+              <span>music title</span>
+            </div>
+            <div class="music__bar">
+              <span>______________</span>
+            </div>
+            <div class="music__control">
+              <i class="fa-solid fa-repeat fa-lg"></i>
+              <i class="fa-solid fa-backward-step fa-lg"></i>
+              <i class="fa-regular fa-circle-play fa-lg"></i>
+              <i class="fa-regular fa-circle-pause fa-lg"></i>
+              <i class="fa-solid fa-forward-step fa-lg"></i>
+              <i class="fa-solid fa-shuffle fa-lg"></i>
+            </div>
           </div>
         </div>
-        <div class="timer">
-          <div class="timer__container">
-            <span class="timer__bigTime timer__bigTime--stop">00:00</span>
-            <span class="timer__smallTime">50</span>
+      </header>
+      <main class="main">
+        <section class="main-container">
+          <div class="work">
+            <span class="work__greeting">안녕하세요 이동복님</span>
+            <span class="work__ask">어떤 일에 집중하실건가요?</span>
+            <form action="#" class="work-frm">
+              <input class="work__what"></input>
+            </form>
+            <div class="work-show work-show--hide">
+              <!-- <i class="fa-regular fa-square"></i> -->
+              <i class="fa-regular fa-square-check fa-sm"></i>
+              <span class="work-show__doing">밥먹기</span>
+              <i class="fa-solid fa-ellipsis fa-sm">
+                <div class="work-item work-item--hide">
+                  <div class="work-item__edit"><i></i></div>
+                  <div class="work-item__delete"><i></i></div>
+                </div>
+              </i>
+            </div>
           </div>
-          <div class="timer__btns">
-            <button class="timer__reset-btn">재설정</button>
-            <button class="timer__start-btn">시작</button>
+          <div class="timer">
+            <div class="timer__container">
+              <span class="timer__bigTime timer__bigTime--stop">49:59</span>
+              <span class="timer__smallTime">59</span>
+            </div>
+            <div class="timer__btns">
+              <button class="timer__reset-btn">재설정</button>
+              <button class="timer__start-btn">시작</button>
+            </div>
           </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="social">
+          <a href="#">
+            <i class="fa-brands fa-github fa-xl"></i>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-hashtag fa-xl"></i>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-envelope fa-xl"></i>
+            <i class="fa-solid fa-envelope-open fa-xl"></i>
+          </a>
         </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <div class="social">
-        <a href="#">github</a>
-        <a href="#">github</a>
-        <a href="#">github</a>
-      </div>
-      <div class="queto">
-        <span class="queto__text"></span>
-        <span class="queto__author"></span>
-      </div>
-      <div class="todo">
-        <span>Todo</span>
+        <div class="queto">
+          <span class="queto__text"></span>
+          <span class="queto__author"></span>
+        </div>
+        <div class="todo">
+          <span>할 일</span>
+        </div>
         <div class="todo-container">
           <div class="todo-top">
-            <div class="todo-top__title active" data-type="today">Today</div>
-            <div class="todo-top__title" data-type="done">Done</div>
+            <div class="todo-top__title active" data-type="today">오늘 할 일</div>
+            <div class="todo-top__title" data-type="done">끝낸 일</div>
             <i></i>
           </div>
           <div class="todo-body">
-            <div class="todo__new">New Todo</div>
+            <div class="todo__new">이 곳을 눌러 할 일을 메모하세요.</div>
             <form action="#" class="todo-frm">
-              <input type="text" class="todo__content" placeholder="New Todo">
+              <input type="text" class="todo__content" placeholder="할 일">
             </form>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>
+  

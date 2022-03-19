@@ -1,0 +1,194 @@
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+
+:root {
+  /* color */
+  --white: #ffffff;
+  --black: #000000;
+  --light-gray: rgba(0, 0, 0, 0.2);
+  --gray: rgba(0, 0, 0, 0.5);
+  --dark-gray: rgba(0, 0, 0, 0.9);
+
+  /* font */
+  --font-small: 20px;
+  --font-medium: 25px;
+  --font-large: 36px;
+  --font-xlarge: 60px;
+  --weight-bold: 600;
+
+  /* size */
+  --size-xsmall: 5px;
+  --size-small: 15px;
+  --size-medium: 25px;
+}
+
+.cover {
+  height: 100%;
+  background: url('../img/3.jpg') center/cover no-repeat;
+}
+
+.header__container {
+  padding: var(--size-small);
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.today {
+  display: flex;
+  align-items: center;
+}
+
+.weather {
+  font-size: var(--font-medium);
+}
+
+.time {
+  margin-left: var(--size-medium);
+  font-size: var(--font-large);
+}
+
+.music {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.music__title {
+  font-size: var(--font-large);
+}
+
+.music__control i {
+  margin-right: var(--size-xsmall);
+  cursor: pointer;
+}
+
+.work__greeting {
+  font-size: var(--font-large);
+}
+
+.todo {
+  font-size: var(--font-medium);
+}
+
+.main {
+  padding: var(--size-medium) 0;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.work__ask {
+  font-size: var(--font-medium);
+  padding: var(--size-small) 0;
+}
+
+.work__what {
+  text-align: center;
+  color: var(--white);
+  font-size: var(--size-medium);
+  border-bottom: 1px solid var(--white);
+}
+
+.work-show {
+  display: flex;
+  align-items: center;
+  padding: var(--size-small) 0;
+  font-size: var(--font-medium);
+}
+
+.work-show i {
+  cursor: pointer;
+}
+
+.work-show__doing {
+  margin: 0 var(--size-small);
+}
+
+.timer {
+  padding: var(--size-small) var(--size-medium);
+  border-radius: var(--size-xsmall);
+  background-color: var(--light-gray);
+}
+
+.timer__container {
+  display: flex;
+  justify-content: center;
+}
+
+.timer__bigTime {
+  font-size: var(--font-xlarge);
+  padding-left: var(--size-xsmall);
+}
+
+.timer__smallTime {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-bold);
+  margin-left: var(--size-xsmall);
+  padding-top: var(--size-medium);
+}
+
+.timer__btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timer__btns button {
+  color: var(--white);
+  padding: var(--size-xsmall);
+  font-size: var(--font-small);
+  font-weight: var(--weight-bold);
+  border-radius: var(--size-xsmall);
+  background-color: var(--gray);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--size-small);
+}
+
+.social a {
+  margin-right: var(--size-xsmall);
+}
+
+.todo {
+  position: relative;
+  cursor: pointer;
+}
+
+.todo-container {
+  position: absolute;
+  padding: var(--size-small);
+  margin-top: -200px;
+  right: 20px;
+  background-color: var(--dark-gray);
+  border-radius: var(--size-xsmall);
+}
+
+.todo-top__title {
+  font-size: var(--font-medium);
+}
+
+.todo__new {
+  padding: var(--size-small) 0;
+  font-size: var(--font-small);
+  text-align: center;
+}
+
+.todo__content {
+  font-size: var(--font-small);
+  color: var(--white);
+}
