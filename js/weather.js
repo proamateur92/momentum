@@ -10,7 +10,7 @@ function geoSuccess(position) {
       const city = document.querySelector('.info span:first-child');
       const temp = document.querySelector('.info span:last-child');
       city.innerText = `${data.name}`;
-      temp.innerText = `${data.main.temp}°`;
+      temp.innerText = `${data.main.temp}°🌡️`;
     });
 }
 
