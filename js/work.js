@@ -7,7 +7,7 @@ const workName = document.querySelector('.work-show__doing');
 const uncheck = document.querySelector('.work-show i:first-child');
 const check = document.querySelector('.work-show i:nth-child(2)');
 const editWork = document.querySelector('.edit-work');
-const bubble = document.querySelector('.edit-work .bubble');
+const workBubble = document.querySelector('.edit-work .bubble');
 const CHECK_KEY = 'fa-regular fa-square fa-sm hidden';
 let work = '';
 
@@ -15,7 +15,6 @@ function init() {
   const isWork = localStorage.getItem('work');
 
   if (isWork) {
-    console.log(1);
     work = isWork;
     hideFrm();
     showDoSomething(work);
@@ -28,7 +27,7 @@ function init() {
   workShow.classList.add('hidden');
   editWork.classList.add('hidden');
   workName.classList.remove('middle-line');
-  bubble.classList.add('hidden');
+  workBubble.classList.add('hidden');
 }
 
 function clear() {
@@ -55,10 +54,6 @@ function allOff() {
   editWork.classList.add('hidden');
 }
 
-// function showWorkStatus() {
-//   workStatus.remove('hidden');
-// }
-
 function hideFrm() {
   workFrm.classList.add('hide');
 }
@@ -77,7 +72,7 @@ function showOption() {
 }
 
 function showBubble() {
-  bubble.classList.toggle('hidden');
+  workBubble.classList.toggle('hidden');
 }
 
 function submitOnWork(event) {
@@ -102,4 +97,4 @@ workFrm.addEventListener('submit', submitOnWork);
 workName.addEventListener('click', showOption);
 uncheck.addEventListener('click', clear);
 editWork.addEventListener('click', showBubble);
-bubble.addEventListener('click', clear);
+workBubble.addEventListener('click', clear);
