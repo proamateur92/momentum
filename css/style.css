@@ -5,9 +5,10 @@
   /* color */
   --white: #ffffff;
   --black: #000000;
-  --light-gray: rgba(0, 0, 0, 0.2);
-  --gray: rgba(0, 0, 0, 0.5);
+  --light-gray: rgba(0, 0, 0, 0.5);
+  --gray: rgba(0, 0, 0, 0.7);
   --dark-gray: rgba(0, 0, 0, 0.9);
+  --darker-gray: #272727;
 
   /* font */
   --font-small: 20px;
@@ -20,11 +21,14 @@
   --size-xsmall: 5px;
   --size-small: 15px;
   --size-medium: 25px;
+  --size-xlarge: 45px;
 }
 
 .cover {
   height: 100%;
-  background: url('../img/3.jpg') center/cover no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .header__container {
@@ -42,8 +46,8 @@
   align-items: center;
 }
 
-.weather {
-  font-size: var(--font-medium);
+.info {
+  font-size: var(--font-large);
 }
 
 .time {
@@ -59,6 +63,12 @@
 
 .music__title {
   font-size: var(--font-large);
+  position: relative;
+}
+
+.music__content {
+  position: absolute;
+  margin-top: var(--size-xlarge);
 }
 
 .music__control i {
@@ -66,12 +76,51 @@
   cursor: pointer;
 }
 
-.work__greeting {
+.greeting {
+  display: flex;
+  align-items: center;
+  margin-left: var(--size-xlarge);
+  margin-bottom: var(--size-xlarge);
+}
+
+.greeting-frm {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.greeting__input {
+  background-color: var(--light-gray);
+  border-radius: var(--size-small);
+  font-size: var(--font-large);
+  color: var(--white);
+  text-align: center;
+}
+
+.greeting__input::placeholder {
+  color: var(--white);
+}
+
+.greeting__content {
   font-size: var(--font-large);
 }
 
-.todo {
-  font-size: var(--font-medium);
+.edit-name {
+  margin-left: var(--size-small);
+}
+
+.bubble {
+  position: absolute;
+  padding: var(--size-small);
+  font-size: var(--font-small);
+  background-color: var(--dark-gray);
+  border-radius: var(--size-small);
+  border-top-left-radius: 0;
+  cursor: pointer;
+}
+
+#edit-name__icon {
+  font-size: var(--font-large);
+  cursor: pointer;
 }
 
 .main {
@@ -92,13 +141,12 @@
 
 .work__ask {
   font-size: var(--font-medium);
-  padding: var(--size-small) 0;
 }
 
 .work__what {
   text-align: center;
   color: var(--white);
-  font-size: var(--size-medium);
+  font-size: var(--font-large);
   border-bottom: 1px solid var(--white);
 }
 
@@ -107,19 +155,39 @@
   align-items: center;
   padding: var(--size-small) 0;
   font-size: var(--font-medium);
+  font-weight: var(--weight-bold);
 }
 
 .work-show i {
   cursor: pointer;
 }
 
+.work-show > i:first-child {
+  position: relative;
+}
+
+.work-show > i:nth-child(2) {
+  position: absolute;
+}
+
+.middle-line {
+  text-decoration: line-through;
+}
+
 .work-show__doing {
   margin: 0 var(--size-small);
+  font-size: var(--font-xlarge);
+  cursor: pointer;
+}
+
+.work-show i,
+.edit-work {
+  margin-top: var(--size-xsmall);
 }
 
 .timer {
   padding: var(--size-small) var(--size-medium);
-  border-radius: var(--size-xsmall);
+  border-radius: var(--size-small);
   background-color: var(--light-gray);
 }
 
@@ -150,45 +218,187 @@
   padding: var(--size-xsmall);
   font-size: var(--font-small);
   font-weight: var(--weight-bold);
-  border-radius: var(--size-xsmall);
+  border-radius: var(--size-small);
   background-color: var(--gray);
 }
 
 .footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer__container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   padding: var(--size-small);
 }
 
-.social a {
-  margin-right: var(--size-xsmall);
+.queto {
+  text-align: center;
+}
+
+.queto__text {
+  font-size: var(--font-medium);
+}
+
+.queto__author {
+  display: inline-block;
+  font-size: var(--font-small);
 }
 
 .todo {
-  position: relative;
+  position: absolute;
+  right: 0;
+  margin-right: var(--size-small);
+  padding: var(--size-xsmall);
+  font-size: var(--font-medium);
+  background-color: var(--light-gray);
+  border-radius: var(--size-xsmall);
   cursor: pointer;
 }
 
 .todo-container {
   position: absolute;
   padding: var(--size-small);
-  margin-top: -200px;
+  margin-top: -320px;
   right: 20px;
   background-color: var(--dark-gray);
-  border-radius: var(--size-xsmall);
+  border-radius: var(--size-small);
+  border-bottom-right-radius: 0;
+  cursor: pointer;
 }
 
-.todo-top__title {
+.todo__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--size-xsmall);
+}
+
+.todo-top {
+  display: flex;
+  align-items: center;
+}
+
+.todo-top__todo,
+.todo-top__done {
   font-size: var(--font-medium);
+  padding: var(--size-small) 0;
+}
+
+.hide {
+  display: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#todo-type-show {
+  margin-left: var(--size-small);
+}
+
+.todo-type {
+  position: absolute;
+  left: 0;
+  padding: var(--size-xsmall) var(--size-small);
+  margin: var(--size-small);
+  background-color: #272727;
+  border-radius: var(--size-small);
+  border-top-left-radius: 0;
+}
+
+.todo-type__list {
+  padding: var(--size-xsmall) 0;
+}
+
+.todo__item {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-small);
 }
 
 .todo__new {
   padding: var(--size-small) 0;
   font-size: var(--font-small);
-  text-align: center;
 }
 
 .todo__content {
   font-size: var(--font-small);
   color: var(--white);
+}
+
+@media screen and (max-width: 850px) and (min-width: 500px) {
+  :root {
+    /* font */
+    --font-xsmall: 10px;
+    --font-small: 15px;
+    --font-medium: 18px;
+    --font-large: 25px;
+    --font-xlarge: 35px;
+    --weight-bold: 600;
+
+    /* size */
+    --size-xsmall: 5px;
+    --size-small: 15px;
+    --size-medium: 25px;
+    --size-xlarge: 45px;
+    --size-xxlarge: 100px;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  :root {
+    /* font */
+    --font-xsmall: 10px;
+    --font-small: 15px;
+    --font-medium: 18px;
+    --font-large: 25px;
+    --font-xlarge: 35px;
+    --weight-bold: 600;
+
+    /* size */
+    --size-xsmall: 5px;
+    --size-small: 15px;
+    --size-medium: 25px;
+    --size-xlarge: 45px;
+    --size-xxlarge: 100px;
+  }
+
+  .header__container {
+    padding: var(--size-xlarge);
+  }
+
+  .main {
+    padding-top: var(--size-xxlarge);
+  }
+
+  .footer__container {
+    padding: var(--size-xlarge);
+  }
+
+  .timer__smallTime {
+    margin-top: -5px;
+  }
+
+  .work-show__doing {
+    font-weight: 100;
+  }
+
+  .todo {
+    position: absolute;
+    padding: var(--font-xsmall);
+    margin: var(--size-xlarge) var(--size-xsmall) 0 0;
+    right: 0;
+  }
+
+  .todo-container {
+    margin-top: -200px;
+  }
+
+  .info,
+  .time__now-text {
+    font-size: var(--font-medium);
+  }
 }

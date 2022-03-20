@@ -137,17 +137,19 @@ input {
   border: none;
   outline: none;
   background-color: transparent;
-  padding: 10px;
+  padding: var(--size-small);
 }
 
 button {
   border: none;
   outline: none;
   cursor: pointer;
+  background-color: transparent;
   font-family: 'Gamja Flower', cursive;
 }
 
-input {
+input,
+li {
   font-family: 'Gamja Flower', cursive;
 }
 

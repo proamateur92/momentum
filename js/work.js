@@ -26,13 +26,13 @@ function init() {
   check.classList.add('hidden');
   workShow.classList.add('hidden');
   editWork.classList.add('hidden');
-  workName.classList.remove('middle-line');
+  // workName.classList.remove('middle-line');
   workBubble.classList.add('hidden');
 }
 
 function clear() {
   localStorage.clear();
-  workName.classList.add('middle-line');
+  // workName.classList.add('middle-line');
   workShow.classList.add('hidden');
   check.classList.add('hidden');
   uncheck.classList.remove('hidden');

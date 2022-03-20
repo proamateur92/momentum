@@ -8,38 +8,27 @@
     <link rel="stylesheet" href="./css/style.css" id="css" />
     <script src="https://kit.fontawesome.com/c1651245ed.js" crossorigin="anonymous"></script>
     <script src="./js/greeting.js" defer></script>
+    <script src="./js/background.js" defer></script>
+    <script src="./js/time.js" defer></script>
+    <script src="./js/weather.js" defer></script>
+    <script src="./js/queto.js" defer></script>
+    <script src="./js/todo.js" defer></script>
+    <script src="./js/work.js" defer></script>
+    <script src="./js/timer.js" defer></script>
   </head>
   <body>
     <div class="cover">
       <header class="header">
         <div class="header__container">
-          <div class="today">
-            <div class="weather">
-              <div class="info">
-                <span>인천</span>
-                <span>3도씨</span>
-              </div>
-            </div>
-            <div class="time">
-              <div class="time__now">
-                <span>00:00</span>
-              </div>
+          <div class="weather">
+            <div class="info">
+              <span></span>
+              <span></span>
             </div>
           </div>
-          <div class="music">
-            <div class="music__title">
-              <span>music title</span>
-            </div>
-            <div class="music__bar">
-              <span>______________</span>
-            </div>
-            <div class="music__control">
-              <i class="fa-solid fa-repeat fa-lg"></i>
-              <i class="fa-solid fa-backward-step fa-lg"></i>
-              <i class="fa-regular fa-circle-play fa-lg"></i>
-              <i class="fa-regular fa-circle-pause fa-lg"></i>
-              <i class="fa-solid fa-forward-step fa-lg"></i>
-              <i class="fa-solid fa-shuffle fa-lg"></i>
+          <div class="time">
+            <div class="time__now-text">
+              <span></span>
             </div>
           </div>
         </div>
@@ -47,70 +36,83 @@
       <main class="main">
         <section class="main-container">
           <div class="work">
-            <span class="work__greeting">안녕하세요 이동복님</span>
-            <span class="work__ask">어떤 일에 집중하실건가요?</span>
-            <form action="#" class="work-frm">
-              <input class="work__what"></input>
-            </form>
-            <div class="work-show work-show--hide">
-              <!-- <i class="fa-regular fa-square"></i> -->
-              <i class="fa-regular fa-square-check fa-sm"></i>
-              <span class="work-show__doing">밥먹기</span>
-              <i class="fa-solid fa-ellipsis fa-sm">
-                <div class="work-item work-item--hide">
-                  <div class="work-item__edit"><i></i></div>
-                  <div class="work-item__delete"><i></i></div>
+            <div class="greeting">
+              <form class="greeting-frm">
+                <input type="text" class="greeting__input" placeholder="이름을 입력해주세요." maxlength="10" />
+              </form>
+              <div class="greeting__content hide">
+                <span class="greeting__text">안녕하세요</span>
+                <span class="greeting__name"></span>
+              </div>
+              <div class="edit-name">
+                <i class="fa-solid fa-ellipsis hidden" id="edit-name__icon"></i>
+                <div class="bubble hidden">
+                  <span class="edit-name__text"> 이름 변경하기 </span>
                 </div>
-              </i>
+              </div>
+            </div>
+            <span class="work__ask">어떤 일에 집중하실건가요?</span>
+            <form class="work-frm">
+              <input class="work__what" maxlength="10" />
+            </form>
+            <div class="work-show hidden">
+              <i class="fa-regular fa-square fa-sm"></i>
+              <i class="fa-regular fa-square-check fa-sm hidden"></i>
+              <span class="work-show__doing"></span>
+              <div class="edit-work hidden">
+                <i class="fa-solid fa-ellipsis fa-lg"> </i>
+                <div class="bubble hidden">
+                  <span class="edit-name__text edit-name__text--hide"> 주요 계획 변경하기 </span>
+                </div>
+              </div>
+              <div class="work-item work-item--hide">
+                <div class="work-item__edit"></div>
+                <div class="work-item__delete"></div>
+              </div>
             </div>
           </div>
           <div class="timer">
             <div class="timer__container">
-              <span class="timer__bigTime timer__bigTime--stop">49:59</span>
-              <span class="timer__smallTime">59</span>
+              <span class="timer__bigTime timer__bigTime--stop"></span>
+              <span class="timer__smallTime"></span>
             </div>
             <div class="timer__btns">
-              <button class="timer__reset-btn">재설정</button>
-              <button class="timer__start-btn">시작</button>
+              <button class="timer__reset-btn" data-type="reset">재설정</button>
+              <button class="timer__start-btn" data-type="start">시작</button>
             </div>
           </div>
         </section>
       </main>
       <footer class="footer">
-        <div class="social">
-          <a href="#">
-            <i class="fa-brands fa-github fa-xl"></i>
-          </a>
-          <a href="#">
-            <i class="fa-solid fa-hashtag fa-xl"></i>
-          </a>
-          <a href="#">
-            <i class="fa-solid fa-envelope fa-xl"></i>
-            <i class="fa-solid fa-envelope-open fa-xl"></i>
-          </a>
-        </div>
-        <div class="queto">
-          <span class="queto__text"></span>
-          <span class="queto__author"></span>
-        </div>
-        <div class="todo">
-          <span>할 일</span>
-        </div>
-        <div class="todo-container">
-          <div class="todo-top">
-            <div class="todo-top__title active" data-type="today">오늘 할 일</div>
-            <div class="todo-top__title" data-type="done">끝낸 일</div>
-            <i></i>
+        <div class="footer__container">
+          <div class="queto">
+            <span class="queto__text"></span><br />
+            <span class="queto__author"></span>
           </div>
-          <div class="todo-body">
-            <div class="todo__new">이 곳을 눌러 할 일을 메모하세요.</div>
-            <form action="#" class="todo-frm">
-              <input type="text" class="todo__content" placeholder="할 일">
-            </form>
+          <div class="todo">
+            <span>할 일</span>
+          </div>
+          <div class="todo-container hide">
+            <div class="todo-top">
+              <div class="todo-top__todo" data-type="today">오늘 할 일</div>
+              <div class="todo-top__done hide" data-type="done">끝낸 일</div>
+              <i class="fa-solid fa-angle-down" id="todo-type-show">
+                <ul class="todo-type hide">
+                  <li class="todo-type__list active">오늘 할 일</li>
+                  <li class="todo-type__list">끝낸 일</li>
+                </ul>
+              </i>
+            </div>
+            <div class="todo-body">
+              <ul class="todo__list"></ul>
+              <div class="todo__new">이 곳을 눌러 할 일을 메모하세요.</div>
+              <form class="todo-frm hidden">
+                <input type="text" class="todo__content" placeholder="할 일" maxlength="10" />
+              </form>
+            </div>
           </div>
         </div>
       </footer>
     </div>
   </body>
 </html>
-  
