@@ -68,7 +68,7 @@ function greetingSubmit(event) {
   hideForm();
   saveName(value);
   showName();
-  userNameText.innerText = `${value}`;
+  userNameText.innerText = `${value}님`;
 }
 
 function init() {
