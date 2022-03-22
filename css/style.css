@@ -262,7 +262,7 @@
 .todo-container {
   position: absolute;
   padding: var(--size-small);
-  margin-top: -320px;
+  margin-top: -310px;
   right: 20px;
   background-color: var(--dark-gray);
   border-radius: var(--size-small);
@@ -329,12 +329,12 @@
   color: var(--white);
 }
 
-@media screen and (max-width: 850px) and (min-width: 500px) {
+@media screen and (max-width: 850px) and (min-width: 451px) {
   :root {
     /* font */
     --font-xsmall: 10px;
     --font-small: 15px;
-    --font-medium: 18px;
+    --font-medium: 15px;
     --font-large: 25px;
     --font-xlarge: 35px;
     --weight-bold: 600;
@@ -348,7 +348,7 @@
   }
 }
 
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 450px) {
   :root {
     /* font */
     --font-xsmall: 10px;
